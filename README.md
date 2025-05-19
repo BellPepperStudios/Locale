@@ -1,4 +1,4 @@
-# <img src="img/locale_icon.png" alt="Locale Banner" width="600" height="100" style="vertical-align:middle;">
+# <img src="img/locale_icon.png" alt="Locale Banner" width="600" height="150" style="vertical-align:middle;">
 
 **Locale** is a fast, lightweight, and private AI chatbot you can run entirely on your own computer.  
 No cloud, no tracking—just instant, secure conversations powered by open-source technology.
