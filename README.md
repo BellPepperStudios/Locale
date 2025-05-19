@@ -22,7 +22,7 @@ Things i want to add in the future
 - Ability to choose ai model
 - Settings area
 
---=
+---
 
 ## 🖼️ Preview
 
