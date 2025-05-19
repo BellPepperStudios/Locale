@@ -32,3 +32,6 @@ No cloud, no tracking—just instant, secure conversations powered by open-sourc
 - 9 - Either open it by double clicking the python file or using the cd command to cd into the folder and running ````python main.py ````
 - 10 - now go to http://localhost:8000 or type your local ip and :8000 at the end to access the website (it should tell you the link in the program)
 - not working? - put it in the issues tab i will assist and help as much as i can!
+
+## 🏆 Credits
+This was made by yours truly. Dill
