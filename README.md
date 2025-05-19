@@ -40,7 +40,7 @@ Things i want to add in the future
 - 7 - Unzip the folder you downloaded from the releases and open it
 - 8 - cd into the folder directory in command prompt and do this command ````pip install requirements.txt````
 - 9 - Either open it by double clicking the python file or using the cd command to cd into the folder and running ````python main.py ````
-- 10 - now go to http://localhost:8000 or type your local ip and :8000 at the end to access the website (it should tell you the link in the program)
+- 10 - now go to http://localhost:8000 or type your loopback address which would be ````http://127.0.0.1:8000```` at the end to access the website (it should tell you the link in the program)
 - not working? - put it in the issues tab i will assist and help as much as i can!
 
 ---
