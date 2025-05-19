@@ -1,15 +1,14 @@
 function buttonresize() {
     var button = document.getElementById("submit");
     var input = document.getElementById("typebox");
-    button.style.height = input.offsetHeight + "px"; // Use offsetHeight for height
+    button.style.height = input.offsetHeight + "px";
 }
 
 function sendMessage() {
     var input = document.getElementById("typebox");
     var userText = input.value.trim();
     if (!userText) return;
-
-    // Add user message with profile image
+    
     let output = document.getElementById("output");
     let userMsg = document.createElement("div");
     userMsg.className = "container";
@@ -19,7 +18,6 @@ function sendMessage() {
     `;
     output.appendChild(userMsg);
 
-    // Show CSS spinner on button
     var button = document.getElementById("submit");
     var originalButtonHTML = button.innerHTML;
     button.innerHTML = '<span class="button-spinner"></span>';
@@ -27,7 +25,6 @@ function sendMessage() {
 
     input.value = "";
 
-    // Force DOM update before fetch
     setTimeout(function() {
         fetch("/", {
             method: "POST",
@@ -38,7 +35,6 @@ function sendMessage() {
         })
         .then(response => response.text())
         .then(data => {
-            // Add AI message
             let aiMsg = document.createElement("div");
             aiMsg.className = "container";
             aiMsg.innerHTML = `
@@ -50,11 +46,9 @@ function sendMessage() {
             let aiTextSpan = aiMsg.querySelector('.ai-text');
             typeWriter(aiTextSpan, data, 1, 3);
 
-            // Restore button
             button.innerHTML = originalButtonHTML;
             button.disabled = false;
 
-            // Scroll to bottom
             output.scrollTop = output.scrollHeight;
         })
         .catch(error => {
@@ -65,10 +59,8 @@ function sendMessage() {
     }, 0);
 }
 
-// Call on page load
 window.addEventListener("DOMContentLoaded", function() {
     buttonresize();
-    // Add Enter key listener to input
     var input = document.getElementById("typebox");
     input.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
@@ -76,7 +68,6 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-// Call on window resize
 window.addEventListener("resize", buttonresize);
 
 function typeWriter(element, text, speed = 20, charsPerTick = 1) {
