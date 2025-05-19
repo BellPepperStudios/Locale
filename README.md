@@ -17,10 +17,10 @@ No cloud, no tracking—just instant, secure conversations powered by open-sourc
 ## 🛣️ Roadmap
 Things i want to add in the future
 
-- Diffrent color themes
-- Custom background
-- Ability to choose ai model
-- Settings area
+- 🟠 Diffrent color themes
+- ✏️ Custom background
+- 📦 Ability to choose ai model
+- ⚙️ Settings area
 
 ---
 
