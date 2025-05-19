@@ -3,7 +3,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 import mimetypes
 
-# Simple memory for all users (not production safe)
 conversation_history = []
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -11,9 +10,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         if self.path == "/" or self.path == "/index.html":
             filepath = "index.html"
         else:
-            # Remove leading slash
             filepath = self.path.lstrip("/")
-            # Prevent directory traversal
             if ".." in filepath or filepath.startswith("/"):
                 self.send_response(403)
                 self.end_headers()
@@ -38,16 +35,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         user_input = post_data.decode('utf-8')
         print(f"Received POST data: {user_input}")
 
-        # Add user message to history
         conversation_history.append(f"User: {user_input}")
 
-        # Build prompt from history (limit to last 10 exchanges for context)
         prompt = "\n".join(conversation_history[-10:]) + "\nAI:"
 
         try:
             response = ollama.generate(model="llama2", prompt=prompt)
             ai_response = response.get('response', response)
-            # Add AI response to history
             conversation_history.append(f"AI: {ai_response}")
 
             self.send_response(200)
